@@ -64,10 +64,10 @@ export function nextPageRequest(template: ReadTemplate, pageNumber: number, cach
 
 export async function readAssets(page: Page): Promise<AssetSnapshot> {
   await page.waitForSelector('fibi-balance', { timeout: 45000 });
-  await page.waitForSelector('div.fibi_account span.acc_num', { timeout: 30000 });
+  await page.waitForSelector('.fibi-account-select .current-account .account_num', { timeout: 30000 });
   const home = page.url(),
     snapshot: AssetSnapshot = {
-      accountNumber: await page.$eval('div.fibi_account span.acc_num', element =>
+      accountNumber: await page.$eval('.fibi-account-select .current-account .account_num', element =>
         (element as HTMLElement).innerText.trim(),
       ),
     };

@@ -33,7 +33,7 @@ test('reads bank FX frames and a complete paged securities portfolio without rea
         contentType = 'text/html; charset=utf-8';
       if (url.origin === 'https://online.fibi.co.il' && url.pathname === '/home')
         body =
-          '<fibi-balance></fibi-balance><div class="fibi_account"><span class="acc_num">001234</span></div><a href="/fx">שערוך מט״ח</a><a href="/securities">שערוך ני״ע</a>';
+          '<fibi-balance></fibi-balance><account-select-mobile class="fibi-account-select"><div class="current-account"><span class="account_num">127-001234</span></div></account-select-mobile><a href="/fx">שערוך מט״ח</a><a href="/securities">שערוך ני״ע</a>';
       else if (url.origin === 'https://online.fibi.co.il' && url.pathname === '/fx')
         body = '<iframe src="/AuthFCTransFCPortfolio"></iframe>';
       else if (url.origin === 'https://online.fibi.co.il' && url.pathname === '/AuthFCTransFCPortfolio')
